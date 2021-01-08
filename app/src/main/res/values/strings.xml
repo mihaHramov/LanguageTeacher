@@ -13,4 +13,6 @@
     <string name="title_activity_phrase_editor">add phrase to dictionary</string>
     <string name="phrase">phrase</string>
     <string name="phrase_translate">phrase translate</string>
+    <string name="title_activity_phrase_translator">PhraseTranslatorActivity</string>
+    <string name="translate_error">Ошибка перевода</string>
 </resources>
