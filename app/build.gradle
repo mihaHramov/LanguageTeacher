@@ -33,8 +33,11 @@ android {
 }
 ext{
     moxyVersion = '2.2.1'
+    dagger_version = '2.30.1'
 }
 dependencies {
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
     implementation "com.github.moxy-community:moxy:$moxyVersion"
     kapt "com.github.moxy-community:moxy-compiler:$moxyVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
