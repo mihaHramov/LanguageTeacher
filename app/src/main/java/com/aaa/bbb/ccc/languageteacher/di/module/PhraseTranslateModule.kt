@@ -10,7 +10,6 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-@PhraseTranslatorScope
 class PhraseTranslateModule {
     @Provides
     @PhraseTranslatorScope
