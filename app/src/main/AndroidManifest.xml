@@ -3,13 +3,24 @@
     package="com.aaa.bbb.ccc.languageteacher">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LanguageTeacher"
-        android:fullBackupContent="false">
+        android:theme="@style/Theme.LanguageTeacher">
+        <activity
+            android:name=".presentation.phraseTranslatorActivity.PhraseTranslatorActivity"
+            android:label="@string/title_activity_phrase_translator"
+            android:theme="@style/Theme.AppCompat.Translucent" >
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".presentation.phraseEditorActivity.PhraseEditorActivity"
             android:label="@string/title_activity_phrase_editor"
