@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.aaa.bbb.ccc.languageteacher.App
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
@@ -11,7 +12,6 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 class PhraseTranslatorActivity : MvpAppCompatActivity(), PhraseTranslatorView {
-
     @Inject
     lateinit var presenterProvider: Provider<PhraseTranslatorPresenter>
     private val presenter: PhraseTranslatorPresenter by moxyPresenter { presenterProvider.get() }
@@ -20,15 +20,11 @@ class PhraseTranslatorActivity : MvpAppCompatActivity(), PhraseTranslatorView {
         Toast.makeText(this, result, Toast.LENGTH_LONG).show()
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         App.getInjector().getComponentTranslateActivityComponent()?.inject(this)
-        val text =
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT) != null) {
-                intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
-            } else {
-                ""
-            }
+        super.onCreate(savedInstanceState)
+        val text = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
         presenter.init(text)
     }
 
