@@ -37,6 +37,7 @@ ext{
 }
 dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.8.2@aar'
     implementation "com.google.dagger:dagger:$dagger_version"
     implementation "com.github.moxy-community:moxy:$moxyVersion"
     kapt "com.github.moxy-community:moxy-compiler:$moxyVersion"
