@@ -1,5 +1,6 @@
 package com.aaa.bbb.ccc.languageteacher.di.module
 
+import com.aaa.bbb.ccc.languageteacher.data.repository.permissions.IPermissionsRepository
 import com.aaa.bbb.ccc.languageteacher.data.repository.translate.FakeTranslateRepository
 import com.aaa.bbb.ccc.languageteacher.data.repository.translate.ITranslateRepository
 import com.aaa.bbb.ccc.languageteacher.di.scope.PhraseTranslatorScope
@@ -18,8 +19,8 @@ class PhraseTranslateModule {
 
     @Provides
     @PhraseTranslatorScope
-    fun provideIPhraseInteractor(repository: ITranslateRepository): IPhraseTranslatorInteractor =
-        PhraseTranslatorInteracor(repository)
+    fun provideIPhraseInteractor(repository: ITranslateRepository,permission: IPermissionsRepository): IPhraseTranslatorInteractor =
+        PhraseTranslatorInteracor(repository,permission)
 
 
     @Provides
