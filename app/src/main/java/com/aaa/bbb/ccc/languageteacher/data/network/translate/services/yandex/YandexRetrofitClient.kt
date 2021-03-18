@@ -1,4 +1,4 @@
-package com.aaa.bbb.ccc.languageteacher.data.network.translate.yandex
+package com.aaa.bbb.ccc.languageteacher.data.network.translate.services.yandex
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
